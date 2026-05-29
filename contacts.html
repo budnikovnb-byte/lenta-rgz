@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента — Контакты</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Бургер -->
+    <div class="menu-button" id="menuButton">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Меню -->
+    <nav class="side-menu" id="sideMenu">
+
+        <a href="index.html">
+            <i class="fas fa-building"></i>
+            О компании
+        </a>
+
+        <a href="news.html">
+            <i class="fas fa-newspaper"></i>
+            Новости
+        </a>
+
+        <a href="currency.html">
+            <i class="fas fa-yen-sign"></i>
+            Курс валют
+        </a>
+
+        <a href="contacts.html" class="active">
+            <i class="fas fa-phone"></i>
+            Контакты
+        </a>
+
+        <a href="video.html">
+            <i class="fas fa-video"></i>
+            Видео
+        </a>
+
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Заголовок -->
+    <header class="page-header">
+
+        <h1>Контактные данные</h1>
+
+        <p>
+            Информация для связи с компанией
+        </p>
+
+    </header>
+
+    <!-- Контакты -->
+    <section class="contacts-section">
+
+        <div class="contacts-card">
+
+            <h2>МКПАО «Лента»</h2>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>8 (800) 700-41-11</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@lenta.com</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <span>
+                    Санкт-Петербург,
+                    ул. Савушкина, 112
+                </span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <span>www.lenta.com</span>
+            </div>
+
+        </div>
+
+        <!-- Карта -->
+        <div class="map-container">
+
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A3db54bc98d0d32eec4fa4d5e0efb98bdb6f3b1cb7b67f52fa16ecf3f8f5a3b72&amp;source=constructor"
+                width="100%"
+                height="500"
+                frameborder="0">
+            </iframe>
+
+        </div>
+
+    </section>
+
+    <!-- Кнопка наверх -->
+    <a href="#" class="top-button">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <footer>
+
+    <p>
+        © 2026 МКПАО «Лента»
+    </p>
+
+    <p>
+        Расчётно-графическое задание по HTML, CSS и JavaScript
+    </p>
+
+    </footer>
+    <script src="js/menu.js"></script>
+
+</body>
+</html>

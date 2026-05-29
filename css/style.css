@@ -1,0 +1,612 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+/* Кнопка меню */
+
+.menu-button{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    background: #FFD400;
+    color: #005BBB;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 1001;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    transition: 0.3s;
+}
+
+.menu-button:hover{
+    transform: scale(1.1);
+}
+
+/* Боковое меню */
+
+.side-menu{
+    position: fixed;
+
+    top: 0;
+    right: -300px;
+
+    width: 300px;
+    height: 100%;
+
+    background: #005BBB;
+
+    padding-top: 100px;
+
+    transition: 0.4s;
+
+    z-index: 1000;
+}
+
+.side-menu.active{
+    right: 0;
+}
+
+.side-menu a{
+    display: block;
+
+    padding: 20px 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.side-menu a:hover{
+    background: #FFD400;
+    color: #005BBB;
+}
+
+.side-menu a.active{
+    background: white;
+    color: #005BBB;
+    font-weight: bold;
+}
+
+/* Затемнение */
+
+.overlay{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Главный экран */
+
+.hero{
+    height: 100vh;
+
+    background: linear-gradient(to right, #FFD400, #FFF5B7);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.hero img{
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.hero h1{
+    font-size: 56px;
+    margin-bottom: 20px;
+    color: #005BBB;
+}
+
+.hero p{
+    font-size: 24px;
+}
+
+/* Контент */
+
+.content{
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 80px 20px;
+
+    background: white;
+}
+
+.content h2{
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    color: #005BBB;
+
+    font-size: 36px;
+}
+
+.content p{
+    margin-bottom: 20px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+.content ul{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.content li{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.main-image{
+    width: 100%;
+
+    border-radius: 20px;
+
+    margin: 30px 0;
+}
+
+/* Кнопка наверх */
+
+.top-button{
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    background: #005BBB;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+.top-button:hover{
+    background: #FFD400;
+    color: #005BBB;
+}
+/* Заголовок страницы */
+
+.page-header{
+    background: linear-gradient(to right, #FFD400, #FFF5B7);
+
+    padding: 120px 20px 80px;
+
+    text-align: center;
+}
+
+.page-header h1{
+    font-size: 52px;
+    color: #005BBB;
+    margin-bottom: 20px;
+}
+
+.page-header p{
+    font-size: 22px;
+}
+
+/* Новости */
+
+.news-container{
+    max-width: 1300px;
+
+    margin: 60px auto;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 30px;
+}
+
+.news-card{
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.news-card:hover{
+    transform: translateY(-10px);
+}
+
+.news-date{
+    color: #777;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+.news-card h2{
+    color: #005BBB;
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+.news-card p{
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.full-text{
+    display: none;
+}
+
+.full-text.active{
+    display: block;
+}
+
+.show-button{
+    background: #005BBB;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.show-button:hover{
+    background: #FFD400;
+    color: #005BBB;
+}
+/* Валюты */
+
+.currency-section{
+    padding: 60px 20px;
+}
+
+.currency-card{
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.currency-card h2{
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    color: #005BBB;
+
+    font-size: 36px;
+}
+
+.rate-info{
+    text-align: center;
+
+    font-size: 24px;
+
+    margin-bottom: 40px;
+}
+
+.converter{
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.converter input{
+    flex: 1;
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+}
+
+.converter button{
+    padding: 15px 25px;
+
+    background: #005BBB;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.converter button:hover{
+    background: #FFD400;
+    color: #005BBB;
+}
+
+.result{
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background: #f5f5f5;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+/* График */
+
+.chart-section{
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.chart-section h2{
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    color: #005BBB;
+
+    font-size: 40px;
+}
+
+.chart-info{
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #005BBB;
+}
+/* Контакты */
+
+.contacts-section{
+    max-width: 1200px;
+
+    margin: 60px auto;
+
+    padding: 20px;
+}
+
+.contacts-card{
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    margin-bottom: 40px;
+}
+
+.contacts-card h2{
+    color: #005BBB;
+
+    margin-bottom: 30px;
+
+    font-size: 40px;
+}
+
+.contact-item{
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+    font-size: 22px;
+}
+
+.contact-item i{
+    color: #FFD400;
+
+    font-size: 28px;
+}
+
+.map-container{
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+/* Видео */
+
+.video-section{
+    max-width: 1300px;
+
+    margin: 60px auto;
+
+    padding: 20px;
+}
+
+.video-container{
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+/* Footer */
+
+footer{
+    background: #005BBB;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    margin-top: 60px;
+}
+
+footer p{
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+/* Адаптивность */
+
+@media(max-width: 768px){
+
+    .hero h1{
+        font-size: 40px;
+    }
+
+    .hero p{
+        font-size: 20px;
+    }
+
+    .content h2{
+        font-size: 28px;
+    }
+
+    .content p,
+    .content li{
+        font-size: 18px;
+    }
+
+    .page-header h1{
+        font-size: 36px;
+    }
+
+    .converter{
+        flex-direction: column;
+    }
+
+    .chart-section h2{
+        font-size: 30px;
+    }
+
+    .contacts-card h2{
+        font-size: 30px;
+    }
+
+    .contact-item{
+        font-size: 18px;
+    }
+
+    .video-container iframe{
+        height: 350px;
+    }
+
+}
